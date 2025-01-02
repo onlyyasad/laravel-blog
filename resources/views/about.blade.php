@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Laravel | About</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -23,12 +23,8 @@
         <div>
             <div class="min-h-screen flex items-center justify-center">
                 <div class="max-w-2xl w-full p-6 bg-white rounded-lg shadow-[0px 14px 34px 0px rgba(0,0,0,0.08)] dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:ring-zinc-700">
-                    <h1 class="text-xl font-semibold text-black dark:text-white">Welcome to my Laravel app</h1>
-                    <div class="flex items-center gap-4">
-                        <a href="/" class="underline text-black dark:text-white/70 hover:text-black/70 dark:hover:text-white/70">Home</a>
-                        <a href="/about/rahim" class="underline text-black dark:text-white/70 hover:text-black/70 dark:hover:text-white/70">Rahim</a>
-                        <a href="/about/karim" class="underline text-black dark:text-white/70 hover:text-black/70 dark:hover:text-white/70">Karim</a>
-                    </div>
+                    <h1 class="text-xl font-semibold text-black dark:text-white">Hello About</h1>
+                    <h5 class="text-xl font-semibold text-black dark:text-white">Hello {{$name}}</h5>
                 </div>
             </div>
         </div>
