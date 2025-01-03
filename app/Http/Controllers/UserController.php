@@ -15,7 +15,10 @@ class UserController extends Controller
     }
 
     function getUserNameWithView($name){
-        return view('getuser', ['name' => $name]);
+
+        $users = ['Asad', 'Rahim', 'Karim'];
+
+        return view('getuser', ['user' => $name, 'users' => $users]);
     }
     function getAdminLogin(){
         // if(View::exists('admin.login')){
