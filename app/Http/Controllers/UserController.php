@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
@@ -18,6 +18,16 @@ class UserController extends Controller
         return view('getuser', ['name' => $name]);
     }
     function getAdminLogin(){
-        return view('admin.login');
+        // if(View::exists('admin.login')){
+        //     return view('admin.login');
+        // }else{
+        //     echo "No view found!";
+        // }
+
+        if(View::exists('admin.signup')){
+            return view('admin.signup');
+        }else{
+            echo "No view found!";
+        }
     }
 }
