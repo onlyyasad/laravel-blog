@@ -22,6 +22,7 @@
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         <div>
             <div class="min-h-screen flex items-center justify-center">
+                <x-message-banner msg="User logged in sucessfully"/>
                 <div class="max-w-2xl w-full p-6 bg-white rounded-lg shadow-[0px 14px 34px 0px rgba(0,0,0,0.08)] dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:ring-zinc-700">
                     <h1 class="text-xl font-semibold text-black dark:text-white">Hello About</h1>
                 
