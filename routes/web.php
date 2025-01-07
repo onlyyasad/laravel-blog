@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,12 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('add', 'add');
     Route::get('edit/{id}', 'edit');
     Route::get('delete/{id}', 'delete');
+});
+
+Route::prefix('teacher')->group(function(){
+    Route::get('show', [TeacherController::class, 'show']);
+    Route::get('add', [TeacherController::class, 'add']);
+    Route::get('edit/{id}', [TeacherController::class, 'edit']);
+    Route::get('delete/{id}', [TeacherController::class, 'delete']);
 });
 
