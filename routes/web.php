@@ -33,3 +33,7 @@ Route::prefix('teacher')->group(function(){
     Route::get('delete/{id}', [TeacherController::class, 'delete']);
 });
 
+Route::middleware('age-country')->group(function () {
+    Route::view('contact', 'contact');
+});
+
