@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     function show(){
-        return "All students.";
+        $students = \App\Models\Student::all();
+        
+        return $students;
     }
     function add(){
         return "Add student.";
