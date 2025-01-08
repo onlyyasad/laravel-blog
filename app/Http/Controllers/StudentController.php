@@ -9,7 +9,13 @@ class StudentController extends Controller
     function show(){
         $students = \App\Models\Student::all();
         
-        return $students;
+        return view('students', ['students' => $students]);
+    }
+
+    function allStudents(){
+        $students = \App\Models\Student::all();
+        
+        return view('students', ['students' => $students]);
     }
     function add(){
         return "Add student.";
