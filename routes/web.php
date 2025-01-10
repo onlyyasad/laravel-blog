@@ -29,7 +29,7 @@ Route::controller(StudentController::class)->group(function () {
 Route::prefix('teacher')->group(function(){
     Route::get('show', [TeacherController::class, 'show']);
     Route::get('add', [TeacherController::class, 'add']);
-    Route::get('edit/{id}', [TeacherController::class, 'edit']);
+    Route::get('edit', [TeacherController::class, 'edit']);
     Route::get('delete/{id}', [TeacherController::class, 'delete']);
 });
 
