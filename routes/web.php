@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,8 @@ Route::get('/about/{name}', function ($name) {
 
 Route::view('login', "login");
 Route::view('profile', "profile");
-
+Route::view('upload', 'upload');
+Route::post('upload', [UploadController::class, 'upload']);
 Route::get('user', [UserController::class, 'getUser']);
 Route::post('login', [UserController::class, 'login']);
 Route::get('logout', [UserController::class, 'logout']);
