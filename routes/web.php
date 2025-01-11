@@ -14,10 +14,12 @@ Route::get('/about/{name}', function ($name) {
     return view('about', ['name' => $name]);
 });
 
-Route::get('/user', [UserController::class, 'getUser']);
-Route::get('/user/{name}', [UserController::class, 'getUserName']);
-Route::get('/user-view/{name}', [UserController::class, 'getUserNameWithView']);
-Route::get('/admin/login', [UserController::class, 'getAdminLogin']);
+Route::view('login', "login");
+Route::get('user', [UserController::class, 'getUser']);
+Route::post('user-login', [UserController::class, 'login']);
+Route::get('user/{name}', [UserController::class, 'getUserName']);
+Route::get('user-view/{name}', [UserController::class, 'getUserNameWithView']);
+Route::get('admin/login', [UserController::class, 'getAdminLogin']);
 
 Route::controller(StudentController::class)->group(function () {
     Route::get('show', 'show');
