@@ -1,7 +1,7 @@
 <div>
     <h1>Login Here</h1>
     <br>
-    <form action="user-login" method="post">
+    <form action="login" method="post">
         @csrf
         <input type="email" name="email" placeholder="Email">
         <br>

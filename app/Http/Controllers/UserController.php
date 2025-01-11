@@ -37,6 +37,14 @@ class UserController extends Controller
     }
 
     function login(Request $request){
-        return $request;
+        $request->session()->put('user', $request->input('email'));
+        return redirect('profile');
+    }
+
+    function logout(){
+        if(session()->has('user')){
+            session()->pull('user');
+        }
+        return redirect('profile');
     }
 }

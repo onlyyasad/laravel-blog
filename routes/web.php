@@ -15,18 +15,11 @@ Route::get('/about/{name}', function ($name) {
 });
 
 Route::view('login', "login");
-Route::get('user', [UserController::class, 'getUser']);
-Route::post('user-login', [UserController::class, 'login']);
-Route::get('user/{name}', [UserController::class, 'getUserName']);
-Route::get('user-view/{name}', [UserController::class, 'getUserNameWithView']);
-Route::get('admin/login', [UserController::class, 'getAdminLogin']);
+Route::view('profile', "profile");
 
-Route::controller(StudentController::class)->group(function () {
-    Route::get('show', 'show');
-    Route::get('add', 'add');
-    Route::get('edit/{id}', 'edit');
-    Route::get('delete/{id}', 'delete');
-});
+Route::get('user', [UserController::class, 'getUser']);
+Route::post('login', [UserController::class, 'login']);
+Route::get('logout', [UserController::class, 'logout']);
 
 Route::prefix('teacher')->group(function(){
     Route::get('show', [TeacherController::class, 'show']);
