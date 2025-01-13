@@ -18,6 +18,7 @@ Route::get('/about/{name}', function ($name) {
 Route::view('login', "login");
 Route::view('profile', "profile");
 Route::view('upload', 'upload');
+
 Route::post('upload', [UploadController::class, 'upload']);
 Route::get('user', [UserController::class, 'getUser']);
 Route::post('login', [UserController::class, 'login']);
@@ -32,6 +33,8 @@ Route::prefix('teacher')->group(function(){
 
 Route::prefix('student')->group(function(){
     Route::get('list', [StudentController::class, 'allStudents']);
+    Route::view('add', 'add');
+    Route::post('add', [StudentController::class, 'add']);
 });
 Route::middleware('age-country')->group(function () {
     Route::view('contact', 'contact');
