@@ -35,6 +35,7 @@ Route::prefix('student')->group(function(){
     Route::get('list', [StudentController::class, 'allStudents']);
     Route::view('add', 'add');
     Route::post('add', [StudentController::class, 'add']);
+    Route::get('delete/{id}', [StudentController::class, 'delete']);
 });
 Route::middleware('age-country')->group(function () {
     Route::view('contact', 'contact');

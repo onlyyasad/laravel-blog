@@ -35,6 +35,11 @@ class StudentController extends Controller
         return "Edit student with id: $id";
     }
     function delete($id){
-        return "Delete student with id: $id";
+        $deleteStudent = Student::destroy($id);
+        if($deleteStudent){
+            return redirect('student/list');
+        }else{
+            return "Student not deleted";
+        }
     }
 }
