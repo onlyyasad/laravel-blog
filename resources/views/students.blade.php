@@ -7,6 +7,7 @@
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Email</th>
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Phone</th>
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Batch</th>
+            <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Created</th>
         </tr>
         @foreach($students as $student)
             <tr>
@@ -15,6 +16,7 @@
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->email }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->phone }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->batch }}</td>
+                <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->created_at }}</td>
             </tr>
         @endforeach
     </table>

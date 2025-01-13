@@ -14,7 +14,7 @@ class StudentController extends Controller
     }
 
     function allStudents(){
-        $students = \App\Models\Student::all();
+        $students = Student::all();
         
         return view('students', ['students' => $students]);
     }
