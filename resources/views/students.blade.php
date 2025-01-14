@@ -19,8 +19,8 @@
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->batch }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->created_at }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">
-                    {{-- <a href="{{ url('student/edit/'.$student->id) }}">Edit</a> --}}
                     <a href="{{ url('student/delete/'.$student->id) }}">Delete</a>
+                    <a href="{{ url('student/edit/'.$student->id) }}">Edit</a>
                 </td>
             </tr>
         @endforeach

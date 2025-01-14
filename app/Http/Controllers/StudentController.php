@@ -32,7 +32,21 @@ class StudentController extends Controller
         }
     }
     function edit($id){
-        return "Edit student with id: $id";
+        $student = Student::find($id);
+        return view('edit-student', ['student' => $student]);
+    }
+    function editStudent(Request $request,$id){
+        $student = Student::find($id);
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->phone = $request->phone;
+        $student->batch = $request->batch;
+        $student->save();
+        if($student){
+            return redirect('student/list');
+        }else{
+            return "Student not updated";
+        }
     }
     function delete($id){
         $deleteStudent = Student::destroy($id);
