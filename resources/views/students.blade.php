@@ -1,5 +1,10 @@
 <div>
     <h1>All Students</h1>
+    <form method="get" action="/student/search">
+        @csrf
+        <input type="text" name="search" placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
     <table border="1" style="border-collapse: collapse">
         <tr >
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Id</th>

@@ -56,4 +56,11 @@ class StudentController extends Controller
             return "Student not deleted";
         }
     }
+
+    function search(Request $request){
+        $search = $request->search;
+        $students = Student::where('name', 'like', '%'.$search.'%')->get();
+    
+        return view('students', ['students' => $students]);
+    }
 }
