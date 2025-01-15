@@ -2,7 +2,7 @@
     <h1>All Students</h1>
     <form method="get" action="/student/search">
         @csrf
-        <input type="text" name="search" placeholder="Search">
+        <input type="text" name="search" placeholder="Search" value="{{ @$search }}">
         <button type="submit">Search</button>
     </form>
     <table border="1" style="border-collapse: collapse">
