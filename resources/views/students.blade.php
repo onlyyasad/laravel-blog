@@ -5,8 +5,14 @@
         <input type="text" name="search" placeholder="Search" value="{{ @$search }}">
         <button type="submit">Search</button>
     </form>
+    <form method="post" action="/student/delete-multiple">
+        @csrf
+        <button type="submit">Delete Selected</button>
+    <br/>
+    <br/>
     <table border="1" style="border-collapse: collapse">
         <tr >
+            <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Select</th>
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Id</th>
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Name</th>
             <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Email</th>
@@ -17,6 +23,9 @@
         </tr>
         @foreach($students as $student)
             <tr>
+                <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">
+                    <input type="checkbox" style="width: 16px; height: 16px;" name="ids[]" value="{{ $student->id }}">
+                </td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->id }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->name }}</td>
                 <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->email }}</td>
@@ -30,8 +39,11 @@
             </tr>
         @endforeach
     </table>
+    </form>
     <br>
     <a href="{{ url('student/add') }}">Add New Student</a>
+    <br>
+    <br>
     {{$students->links()}}
 </div>
 

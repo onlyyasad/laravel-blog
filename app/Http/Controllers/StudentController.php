@@ -59,8 +59,18 @@ class StudentController extends Controller
 
     function search(Request $request){
         $search = $request->search;
-        $students = Student::where('name', 'like', '%'.$search.'%')->get();
+        $students = Student::where('name', 'like', '%'.$search.'%')->paginate(4)->withQueryString();
     
         return view('students', ['students' => $students, 'search' => $search]);
+    }
+
+    function deleteStudents(Request $request){
+        $ids = $request->ids;
+        $result = Student::destroy($ids);
+        if($result){
+            return redirect('student/list');
+        }else{
+            return "Students not deleted";
+        }
     }
 }
