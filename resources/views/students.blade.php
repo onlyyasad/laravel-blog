@@ -32,4 +32,12 @@
     </table>
     <br>
     <a href="{{ url('student/add') }}">Add New Student</a>
+    {{$students->links()}}
 </div>
+
+<style>
+    .w-5.h-5{
+        width: 20px;
+        height: 20px;
+    }
+</style>
