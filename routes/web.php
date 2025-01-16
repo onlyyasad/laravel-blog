@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
+
 Route::prefix('student')->group(function(){
     Route::get('list', [StudentController::class, 'allStudents']);
     Route::view('add', 'add');
