@@ -1,34 +1,11 @@
 <?php
 
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\UploadController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('/about/{name}', function ($name) {
-    return view('about', ['name' => $name]);
-});
-
-Route::view('login', "login");
-Route::view('profile', "profile");
-Route::view('upload', 'upload');
-
-Route::post('upload', [UploadController::class, 'upload']);
-Route::get('user', [UserController::class, 'getUser']);
-Route::post('login', [UserController::class, 'login']);
-Route::get('logout', [UserController::class, 'logout']);
-
-Route::prefix('teacher')->group(function(){
-    Route::get('show', [TeacherController::class, 'show']);
-    Route::get('add', [TeacherController::class, 'add']);
-    Route::get('edit', [TeacherController::class, 'edit']);
-    Route::get('delete/{id}', [TeacherController::class, 'delete']);
 });
 
 Route::prefix('student')->group(function(){
@@ -40,8 +17,5 @@ Route::prefix('student')->group(function(){
     Route::put('edit-student/{id}', [StudentController::class, 'editStudent']);
     Route::get('search', [StudentController::class, 'search']);
     Route::post('delete-multiple', [StudentController::class, 'deleteStudents']);
-});
-Route::middleware('age-country')->group(function () {
-    Route::view('contact', 'contact');
 });
 
