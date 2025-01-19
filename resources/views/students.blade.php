@@ -7,37 +7,39 @@
             <h1>All Students</h1>
             <form method="get" action="/student/search">
                 @csrf
-                <input type="text" name="search" placeholder="Search" value="{{ @$search }}">
-                <button type="submit">Search</button>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" value="{{ @$search }}">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                  </div>
             </form>
             <form method="post" action="/student/delete-multiple">
                 @csrf
-                <button type="submit">Delete Selected</button>
+                <button type="submit" class="btn btn-danger">Delete Selected</button>
             <br/>
             <br/>
-            <table border="1" style="border-collapse: collapse">
+            <table border="1" class="table">
                 <tr >
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Select</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Id</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Name</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Email</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Phone</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Batch</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Created</th>
-                    <th style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">Action</th>
+                    <th scope="col">Select</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Action</th>
                 </tr>
                 @foreach($students as $student)
                     <tr>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">
-                            <input type="checkbox" style="width: 16px; height: 16px;" name="ids[]" value="{{ $student->id }}">
-                        </td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->id }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->name }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->email }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->phone }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->batch }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">{{ $student->created_at }}</td>
-                        <td style="padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px">
+                        <th scope="row">
+                            <input type="checkbox" class="form-check-input"  name="ids[]" value="{{ $student->id }}">
+                        </th>
+                        <td>{{ $student->id }}</td>
+                        <td>{{ $student->name }}</td>
+                        <td>{{ $student->email }}</td>
+                        <td>{{ $student->phone }}</td>
+                        <td>{{ $student->batch }}</td>
+                        <td>{{ $student->created_at }}</td>
+                        <td>
                             <a href="{{ url('student/delete/'.$student->id) }}">Delete</a>
                             <a href="{{ url('student/edit/'.$student->id) }}">Edit</a>
                         </td>
