@@ -11,6 +11,10 @@ class Student extends Model
     use HasFactory;
 
     function setNameAttribute($value){
-        $this->attributes['name'] = ucfirst($value);
+        $this->attributes['name'] = ucwords($value);
+    }
+
+    function setPhoneAttribute($value){
+        $this->attributes['phone'] = "+880".$value;
     }
 }
