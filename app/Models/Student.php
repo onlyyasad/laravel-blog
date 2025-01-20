@@ -9,4 +9,8 @@ class Student extends Model
 {
     //
     use HasFactory;
+
+    function setNameAttribute($value){
+        $this->attributes['name'] = ucfirst($value);
+    }
 }
