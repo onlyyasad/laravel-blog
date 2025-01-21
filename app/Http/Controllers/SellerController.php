@@ -20,4 +20,9 @@ class SellerController extends Controller
         return $data;
     }
 
+    function many(){
+        $data = Seller::find(2)->getManyProduct;
+        return $data;
+    }
+
 }

@@ -25,6 +25,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="/student/list">Students</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/seller/list">Seller Products(One)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/seller/many">Seller Products(many)</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -26,4 +26,5 @@ Route::prefix('student')->group(function(){
 
 Route::prefix('seller')->group(function(){
     Route::get('list', [SellerController::class, 'list']);
+    Route::get('many', [SellerController::class, 'many']);
 });
